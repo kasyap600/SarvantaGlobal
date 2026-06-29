@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
@@ -32,7 +33,9 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <ContactForm />
+            <Suspense fallback={<div className="h-96 bg-white border border-[#E8D5A0]/60 animate-pulse" />}>
+              <ContactForm />
+            </Suspense>
           </div>
 
           <div className="space-y-5">
