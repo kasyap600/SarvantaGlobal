@@ -10,7 +10,7 @@ const pillars = [
   {
     icon: Globe,
     title: "Global Reach",
-    desc: "Our supply network spans across India's finest spice-growing regions — Malabar coast for pepper, Guntur and Byadgi for chillies — enabling us to source premium grades year-round.",
+    desc: "Our supply network spans across India's finest spice-growing regions including the Malabar coast for pepper and Guntur and Byadgi for chillies, enabling us to source premium grades year-round.",
     points: ["Direct grower relationships", "Pan-India sourcing network", "Year-round availability"],
   },
   {
@@ -50,7 +50,7 @@ export default function WhySarvantaPage() {
             <span className="text-[#C9A84C]/60 text-xs">✦</span>
           </div>
           <p className="text-blue-200/50 max-w-xl leading-relaxed text-sm">
-            A Bangalore-based commodity trading company specializing in premium Indian spices. Our mission — connect the world's buyers with India's finest produce.
+            A Bangalore-based commodity trading company specializing in premium Indian spices. Our mission is to connect the world's buyers with India's finest produce.
           </p>
         </div>
         <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent" />

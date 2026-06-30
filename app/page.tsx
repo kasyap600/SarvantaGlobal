@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Handshake, TrendingUp, Target, ArrowRight, CheckCircle, Star, MoveRight, Download } from "lucide-react";
+import { Globe, Handshake, TrendingUp, Target, ArrowRight, CheckCircle, Star, MoveRight } from "lucide-react";
 import { products } from "@/lib/products";
 import MarqueeTicker from "@/components/MarqueeTicker";
 import Reveal from "@/components/Reveal";
@@ -22,8 +22,8 @@ const whyPoints = [
 ];
 
 const stats = [
-  { value: "3+",    label: "Product Categories" },
-  { value: "10+",   label: "Grade Variants" },
+  { value: "4+",    label: "Product Categories" },
+  { value: "25+",   label: "Grade Variants" },
   { value: "24h",   label: "Quote Response" },
   { value: "100%",  label: "Natural & Cleaned" },
 ];
@@ -84,7 +84,7 @@ export default function Home() {
           {/* Subtitle */}
           <Reveal delay={0.24}>
             <p className="text-blue-200/55 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10">
-              Sarvanta Global sources and exports the finest Indian spices and powders — Black Pepper, White Pepper, Red Chillies, Onion Powder, and Moringa Powder — to buyers worldwide with consistent quality and competitive pricing.
+              Sarvanta Global sources and exports the finest Indian spices and powders including Black Pepper, White Pepper, Red Chillies, and Dehydrated Vegetable Powders to buyers worldwide with consistent quality and competitive pricing.
             </p>
           </Reveal>
 
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="h-px w-6 bg-[#C9A84C]/40" />
               <p className="text-blue-200/40 text-xs tracking-[0.25em] uppercase">
-                Founded by <span className="text-[#C9A84C]/70 font-semibold">Ved Kumar</span>
+                Founded by <span className="text-[#C9A84C]/70 font-semibold">Kumar</span>
               </p>
               <div className="h-px w-6 bg-[#C9A84C]/40" />
             </div>
@@ -114,13 +114,6 @@ export default function Home() {
               >
                 Request a Quote
               </Link>
-              <a
-                href="/images/brochure.png"
-                download="Sarvanta-Global-Brochure.png"
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/70 font-semibold px-10 py-4 rounded-sm tracking-wide text-sm hover:border-white/40 hover:text-white transition-all duration-200"
-              >
-                <Download size={15} /> Download Brochure
-              </a>
             </div>
           </Reveal>
 

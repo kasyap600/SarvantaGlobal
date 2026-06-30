@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: "Products — Sarvanta Global",
-  description: "Browse our premium Indian spice catalogue — Black Pepper, White Pepper, Red Chillies, Onion Powder, Moringa Powder.",
+  description: "Browse our premium Indian spice catalogue: Black Pepper, White Pepper, Red Chillies, and Dehydrated Vegetable Powders.",
 };
 
 export default function ProductsPage() {

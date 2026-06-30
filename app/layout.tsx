@@ -18,7 +18,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Sarvanta Global — Premium Indian Spices & Commodities",
   description:
-    "Sarvanta Global supplies premium quality Indian spices — Black Pepper, White Pepper, Red Chillies, Onion Powder, Moringa Powder — to global markets. Bangalore, Karnataka, India.",
+    "Sarvanta Global supplies premium quality Indian spices including Black Pepper, White Pepper, Red Chillies, and Dehydrated Vegetable Powders to global markets. Bangalore, Karnataka, India.",
   keywords: "Indian black pepper exporter, red chilli supplier India, white pepper India, spice exporter Bangalore",
 };
 

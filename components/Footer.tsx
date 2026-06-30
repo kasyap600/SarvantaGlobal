@@ -60,8 +60,7 @@ export default function Footer() {
                 { href: "/products/black-pepper", label: "Black Pepper" },
                 { href: "/products/white-pepper", label: "White Pepper" },
                 { href: "/products/red-chillies", label: "Red Chillies" },
-                { href: "/products/onion-powder", label: "Onion Powder" },
-                { href: "/products/moringa-powder", label: "Moringa Powder" },
+                { href: "/products/dehydrated-vegetable-powders", label: "Vegetable Powders" },
                 { href: "/products", label: "All Products" },
               ].map(({ href, label }) => (
                 <li key={href}>
@@ -80,11 +79,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <User size={13} className="text-[#C9A84C] mt-0.5 shrink-0" />
-                <span className="text-white/70 text-sm font-semibold">Ved Kumar</span>
+                <span className="text-white/70 text-sm font-semibold">Kumar</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={13} className="text-[#C9A84C] mt-0.5 shrink-0" />
-                <span className="text-blue-200/40 text-sm">+91 97397 99944</span>
+                <span className="text-blue-200/40 text-sm">+91 99004 22441</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={13} className="text-[#C9A84C] mt-0.5 shrink-0" />

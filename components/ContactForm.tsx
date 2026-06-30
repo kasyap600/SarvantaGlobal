@@ -119,8 +119,7 @@ export default function ContactForm() {
             <option value="black-pepper">Black Pepper</option>
             <option value="white-pepper">White Pepper</option>
             <option value="red-chillies">Red Chillies</option>
-            <option value="onion-powder">Onion Powder</option>
-            <option value="moringa-powder">Moringa Powder</option>
+            <option value="dehydrated-vegetable-powders">Dehydrated Vegetable Powders</option>
             <option value="multiple">Multiple Products</option>
           </select>
           {errors.product && <p className={errorClass}>{errors.product.message}</p>}

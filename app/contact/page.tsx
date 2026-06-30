@@ -24,7 +24,7 @@ export default function ContactPage() {
             <span className="text-[#C9A84C]/60 text-xs">✦</span>
           </div>
           <p className="text-blue-200/50 max-w-xl leading-relaxed text-sm">
-            Tell us your requirements — product, quantity, and packaging preference — and we will respond with pricing and specifications within 24 hours.
+            Tell us your requirements including product, quantity, and packaging preference and we will respond with pricing and specifications within 24 hours.
           </p>
         </div>
         <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent" />
@@ -47,8 +47,8 @@ export default function ContactPage() {
                 <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#C9A84C] mb-6">Contact Details</h3>
                 <ul className="space-y-6">
                   {[
-                    { icon: User, label: "Contact Person", value: "Ved Kumar", href: undefined },
-                    { icon: Phone, label: "Phone", value: "+91 97397 99944", href: "tel:+919739799944" },
+                    { icon: User, label: "Contact Person", value: "Kumar", href: undefined },
+                    { icon: Phone, label: "Phone", value: "+91 99004 22441", href: "tel:+919900422441" },
                     { icon: Mail, label: "Email", value: "info@sarvantaglobal.com", href: "mailto:info@sarvantaglobal.com" },
                     { icon: MapPin, label: "Location", value: "Bangalore, Karnataka, India", href: undefined },
                     { icon: Clock, label: "Response Time", value: "Within 24 hours", href: undefined },
