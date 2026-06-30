@@ -74,7 +74,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-blue-200/30 text-[10px] tracking-[0.2em] uppercase mb-1">WhatsApp</p>
-                      <WhatsAppLink className="text-[#25D366] text-sm hover:text-[#1ebe5d] transition-colors flex items-center gap-2" />
+                      <a href={`https://wa.me/919900422441?text=${encodeURIComponent("Hi, I'm interested in your products. Could you please share more details?")}`} target="_blank" rel="noopener noreferrer" className="text-[#25D366] text-sm hover:text-[#1ebe5d] transition-colors">+91 99004 22441</a>
                     </div>
                   </li>
                 </ul>
