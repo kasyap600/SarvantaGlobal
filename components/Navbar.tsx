@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
   { href: "/why-sarvanta", label: "Why Us" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -73,7 +74,7 @@ export default function Navbar() {
               href="/contact"
               className="btn-gold text-[#0B1120] text-[13px] font-semibold px-5 py-2 rounded-sm tracking-wide"
             >
-              Get a Quote
+              Request a Quote
             </Link>
           </nav>
 
