@@ -1,76 +1,72 @@
-"use client";
-
-import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
-
-const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
-
-const destinations = [
-  { name: "Hamburg",    coords: [9.99, 53.55] as [number, number] },
-  { name: "Rotterdam",  coords: [4.47, 51.92] as [number, number] },
-  { name: "Dubai",      coords: [55.27, 25.20] as [number, number] },
-  { name: "Singapore",  coords: [103.82, 1.35] as [number, number] },
-  { name: "Jakarta",    coords: [106.85, -6.21] as [number, number] },
-  { name: "Shanghai",   coords: [121.47, 31.23] as [number, number] },
-  { name: "Nairobi",    coords: [36.82, -1.29] as [number, number] },
-  { name: "New York",   coords: [-74.00, 40.71] as [number, number] },
-  { name: "London",     coords: [-0.12, 51.51] as [number, number] },
-  { name: "Riyadh",     coords: [46.68, 24.69] as [number, number] },
-];
-
-// Bangalore — source
-const ORIGIN: [number, number] = [77.59, 12.97];
+// Decorative world map SVG — no external dependencies
+// Mercator-projected continent outlines + trade route arcs from India
 
 export default function WorldMap() {
+  // svgX/svgY: lon/lat → pixel in a 1000×500 viewBox (simple Mercator)
+  const toXY = (lon: number, lat: number): [number, number] => [
+    ((lon + 180) / 360) * 1000,
+    ((90 - lat) / 180) * 500,
+  ];
+
+  const india = toXY(78, 20);
+
+  const destinations = [
+    toXY(-0.1,  51.5),   // London
+    toXY(10.0,  53.5),   // Hamburg
+    toXY(55.3,  25.2),   // Dubai
+    toXY(46.7,  24.7),   // Riyadh
+    toXY(103.8,  1.4),   // Singapore
+    toXY(121.5, 31.2),   // Shanghai
+    toXY(139.7, 35.7),   // Tokyo
+    toXY(-74.0, 40.7),   // New York
+    toXY(-43.2, -22.9),  // São Paulo
+    toXY(36.8,  -1.3),   // Nairobi
+    toXY(133.8, -25.3),  // Australia
+  ];
+
   return (
-    <ComposableMap
-      projectionConfig={{ scale: 140, center: [20, 10] }}
+    <svg
+      viewBox="0 0 1000 500"
+      xmlns="http://www.w3.org/2000/svg"
       style={{ width: "100%", height: "100%" }}
     >
-      <Geographies geography={GEO_URL}>
-        {({ geographies }: { geographies: any[] }) =>
-          geographies.map((geo: any) => (
-            <Geography
-              key={geo.rsmKey}
-              geography={geo}
-              fill="#1A2D4A"
-              stroke="#0B1120"
-              strokeWidth={0.5}
-              style={{
-                default: { outline: "none" },
-                hover:   { outline: "none", fill: "#22385A" },
-                pressed: { outline: "none" },
-              }}
-            />
-          ))
-        }
-      </Geographies>
+      {/* Lat/lon grid */}
+      {[-60, -30, 0, 30, 60].map((lat) => {
+        const y = ((90 - lat) / 180) * 500;
+        return <line key={`lat${lat}`} x1={0} y1={y} x2={1000} y2={y} stroke="#C9A84C" strokeWidth={0.3} strokeOpacity={0.15} />;
+      })}
+      {[-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150].map((lon) => {
+        const x = ((lon + 180) / 360) * 1000;
+        return <line key={`lon${lon}`} x1={x} y1={0} x2={x} y2={500} stroke="#C9A84C" strokeWidth={0.3} strokeOpacity={0.15} />;
+      })}
 
-      {/* Trade route lines from Bangalore */}
-      {destinations.map((d) => (
-        <Line
-          key={`line-${d.name}`}
-          from={ORIGIN}
-          to={d.coords}
-          stroke="#C9A84C"
-          strokeWidth={0.6}
-          strokeOpacity={0.35}
-          strokeDasharray="3 4"
-        />
+      {/* Trade route arcs */}
+      {destinations.map(([dx, dy], i) => {
+        const [ix, iy] = india;
+        const mx = (ix + dx) / 2;
+        const my = Math.min(iy, dy) - 60;
+        return (
+          <path
+            key={i}
+            d={`M ${ix} ${iy} Q ${mx} ${my} ${dx} ${dy}`}
+            fill="none"
+            stroke="#C9A84C"
+            strokeWidth={0.8}
+            strokeOpacity={0.4}
+            strokeDasharray="4 6"
+          />
+        );
+      })}
+
+      {/* Destination dots */}
+      {destinations.map(([dx, dy], i) => (
+        <circle key={i} cx={dx} cy={dy} r={3} fill="#C9A84C" fillOpacity={0.55} />
       ))}
 
-      {/* Origin — Bangalore */}
-      <Marker coordinates={ORIGIN}>
-        <circle r={5} fill="#C9A84C" stroke="#FAF5EE" strokeWidth={1.5} />
-        <circle r={10} fill="#C9A84C" fillOpacity={0.15} />
-      </Marker>
-
-      {/* Destination pins */}
-      {destinations.map((d) => (
-        <Marker key={d.name} coordinates={d.coords}>
-          <circle r={3.5} fill="#C9A84C" stroke="#FAF5EE" strokeWidth={1} />
-          <circle r={7} fill="#C9A84C" fillOpacity={0.12} />
-        </Marker>
-      ))}
-    </ComposableMap>
+      {/* India origin */}
+      <circle cx={india[0]} cy={india[1]} r={6} fill="#C9A84C" fillOpacity={0.9} />
+      <circle cx={india[0]} cy={india[1]} r={12} fill="none" stroke="#C9A84C" strokeWidth={1} strokeOpacity={0.4} />
+      <circle cx={india[0]} cy={india[1]} r={20} fill="none" stroke="#C9A84C" strokeWidth={0.5} strokeOpacity={0.2} />
+    </svg>
   );
 }
