@@ -1,30 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Shield,
-  Award,
-  RefreshCw,
-  Users,
-  Leaf,
-  TrendingUp,
-  Sprout,
-  PackageCheck,
-  Package,
-  Tag,
-  HeadphonesIcon,
-  Globe,
-  Eye,
-  Target,
-  Handshake,
-  ArrowRight,
-  CheckCircle,
-  FlaskConical,
-  Wrench,
-  MapPin,
-  ClipboardList,
-  BadgeCheck,
-  MessageCircle,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+
+const I = "/images/About Us - Images/icons";
 
 export const metadata = {
   title: "About Us — Sarvanta Global",
@@ -34,7 +12,7 @@ export const metadata = {
 
 const whoWeAre = [
   {
-    icon: Users,
+    icon: `${I}/01-who-we-are.png`,
     title: "Who We Are",
     body: [
       "Sarvanta Global is an Indian agricultural commodities sourcing and export company committed to connecting global buyers with premium-quality products sourced from trusted growers and processors across India.",
@@ -43,14 +21,14 @@ const whoWeAre = [
     ],
   },
   {
-    icon: Eye,
+    icon: `${I}/02-vision.png`,
     title: "Our Vision",
     body: [
       "To become one of the world's most trusted agricultural commodities trading companies by building long-term partnerships founded on quality, integrity, and reliability.",
     ],
   },
   {
-    icon: Target,
+    icon: `${I}/03-mission.png`,
     title: "Our Mission",
     body: [
       "To connect Indian producers with international markets while delivering exceptional value through responsible sourcing, consistent quality, flexible packaging, and customer-first service.",
@@ -59,30 +37,30 @@ const whoWeAre = [
 ];
 
 const coreValues = [
-  { icon: Shield,     title: "Integrity",        desc: "We believe transparency builds lasting partnerships." },
-  { icon: Award,      title: "Quality",           desc: "Every shipment reflects our commitment to excellence." },
-  { icon: RefreshCw,  title: "Reliability",       desc: "Consistent supply and dependable communication." },
-  { icon: Users,      title: "Customer First",    desc: "Every buyer is treated as a long-term partner." },
-  { icon: Leaf,       title: "Sustainability",    desc: "Supporting responsible sourcing and ethical practices." },
-  { icon: TrendingUp, title: "Continuous Growth", desc: "Expanding our product portfolio while maintaining uncompromising standards." },
+  { icon: `${I}/04-integrity.png`,        title: "Integrity",        desc: "We believe transparency builds lasting partnerships." },
+  { icon: `${I}/05-quality.png`,          title: "Quality",          desc: "Every shipment reflects our commitment to excellence." },
+  { icon: `${I}/06-reliability.png`,      title: "Reliability",      desc: "Consistent supply and dependable communication." },
+  { icon: `${I}/07-customer-first.png`,   title: "Customer First",   desc: "Every buyer is treated as a long-term partner." },
+  { icon: `${I}/08-sustainability.png`,   title: "Sustainability",   desc: "Supporting responsible sourcing and ethical practices." },
+  { icon: `${I}/09-continuous-growth.png`,title: "Continuous Growth",desc: "Expanding our product portfolio while maintaining uncompromising standards." },
 ];
 
 const whyChoose = [
-  { icon: Sprout,         title: "Trusted Sourcing",       desc: "We partner with verified growers and processors across India to ensure consistency and traceability." },
-  { icon: PackageCheck,   title: "Export Quality",         desc: "Every shipment is prepared to meet international quality expectations and buyer specifications." },
-  { icon: Package,        title: "Flexible Packaging",     desc: "Standard bulk packaging or customised private-label solutions based on customer requirements." },
-  { icon: Tag,            title: "Competitive Pricing",    desc: "Transparent pricing through efficient procurement and long-term supplier relationships." },
-  { icon: HeadphonesIcon, title: "Dedicated Support",      desc: "Fast quotations, responsive communication, and personalised assistance throughout the process." },
-  { icon: Globe,          title: "Global Trade Expertise", desc: "Understanding international trade documentation and buyer expectations end-to-end." },
+  { icon: `${I}/10-trusted-sourcing.png`,       title: "Trusted Sourcing",       desc: "We partner with verified growers and processors across India to ensure consistency and traceability." },
+  { icon: `${I}/11-export-quality.png`,         title: "Export Quality",         desc: "Every shipment is prepared to meet international quality expectations and buyer specifications." },
+  { icon: `${I}/12-flexible-packaging.png`,     title: "Flexible Packaging",     desc: "Standard bulk packaging or customised private-label solutions based on customer requirements." },
+  { icon: `${I}/13-competitive-pricing.png`,    title: "Competitive Pricing",    desc: "Transparent pricing through efficient procurement and long-term supplier relationships." },
+  { icon: `${I}/14-dedicated-support.png`,      title: "Dedicated Support",      desc: "Fast quotations, responsive communication, and personalised assistance throughout the process." },
+  { icon: `${I}/15-global-trade-expertise.png`, title: "Global Trade Expertise", desc: "Understanding international trade documentation and buyer expectations end-to-end." },
 ];
 
 const advantage = [
-  { icon: Sprout,        title: "Carefully Selected Suppliers",   desc: "We partner with trusted growers and processors who consistently meet our quality expectations." },
-  { icon: BadgeCheck,    title: "Consistent Product Quality",     desc: "Every shipment is sourced with a focus on consistency in specifications, appearance, and quality." },
-  { icon: ClipboardList, title: "Transparent Business Practices", desc: "Clear communication, fair pricing, and honest commitments form the foundation of every partnership." },
-  { icon: Wrench,        title: "Flexible Business Solutions",    desc: "Packaging, specifications, and sourcing solutions tailored to your business requirements." },
-  { icon: MessageCircle, title: "Responsive Communication",       desc: "Fast quotations, proactive updates, and dedicated customer support throughout your sourcing journey." },
-  { icon: Handshake,     title: "Long-Term Partnerships",         desc: "We aim to become a reliable sourcing partner — not just another supplier." },
+  { icon: `${I}/16-carefully-selected-suppliers.png`,   title: "Carefully Selected Suppliers",   desc: "We partner with trusted growers and processors who consistently meet our quality expectations." },
+  { icon: `${I}/17-consistent-product-quality.png`,     title: "Consistent Product Quality",     desc: "Every shipment is sourced with a focus on consistency in specifications, appearance, and quality." },
+  { icon: `${I}/18-transparent-business-practices.png`, title: "Transparent Business Practices", desc: "Clear communication, fair pricing, and honest commitments form the foundation of every partnership." },
+  { icon: `${I}/19-flexible-business-solutions.png`,    title: "Flexible Business Solutions",    desc: "Packaging, specifications, and sourcing solutions tailored to your business requirements." },
+  { icon: `${I}/20-responsive-communication.png`,       title: "Responsive Communication",       desc: "Fast quotations, proactive updates, and dedicated customer support throughout your sourcing journey." },
+  { icon: `${I}/21-long-term-partnerships.png`,         title: "Long-Term Partnerships",         desc: "We aim to become a reliable sourcing partner — not just another supplier." },
 ];
 
 const globalBuyerTypes = [
@@ -93,24 +71,24 @@ const globalBuyerTypes = [
 ];
 
 const commitmentItems = [
-  { icon: Sprout,        label: "Trusted Suppliers" },
-  { icon: FlaskConical,  label: "Hygienic Processing" },
-  { icon: Wrench,        label: "Machine Cleaned" },
-  { icon: Package,       label: "Export Packaging" },
-  { icon: MapPin,        label: "Traceable Sourcing" },
-  { icon: BadgeCheck,    label: "Consistent Specifications" },
+  { icon: `${I}/22-trusted-suppliers.png`,          label: "Trusted Suppliers" },
+  { icon: `${I}/23-hygienic-processing.png`,        label: "Hygienic Processing" },
+  { icon: `${I}/24-machine-cleaned.png`,            label: "Machine Cleaned" },
+  { icon: `${I}/25-export-packaging.png`,           label: "Export Packaging" },
+  { icon: `${I}/26-traceable-sourcing.png`,         label: "Traceable Sourcing" },
+  { icon: `${I}/27-consistent-specifications.png`,  label: "Consistent Specifications" },
 ];
 
 const differentCards = [
-  { icon: Handshake,  title: "Long-Term Partnerships",     desc: "We focus on building enduring relationships through transparency and reliability." },
-  { icon: Users,      title: "Customer-Centric Approach",  desc: "Every requirement is understood carefully, with tailored sourcing and communication." },
-  { icon: TrendingUp, title: "Scalable Product Portfolio", desc: "Starting with premium spices and powders today, with a long-term vision to expand across agricultural commodities." },
+  { icon: `${I}/28-long-term-partnerships-different.png`, title: "Long-Term Partnerships",     desc: "We focus on building enduring relationships through transparency and reliability." },
+  { icon: `${I}/29-customer-centric-approach.png`,        title: "Customer-Centric Approach",  desc: "Every requirement is understood carefully, with tailored sourcing and communication." },
+  { icon: `${I}/30-scalable-product-portfolio.png`,       title: "Scalable Product Portfolio", desc: "Starting with premium spices and powders today, with a long-term vision to expand across agricultural commodities." },
 ];
 
 const qualityImages = [
-  { src: "/images/red-chillies.png",   alt: "Red Chillies" },
-  { src: "/images/powders.png",        alt: "Spice Powders" },
-  { src: "/images/black-pepper.png",   alt: "Black Pepper" },
+  { src: "/images/About Us - Images/03-quality-lab-testing-clear.png",        alt: "Quality lab testing" },
+  { src: "/images/About Us - Images/04-quality-spice-powders-clear.png",       alt: "Quality spice powders" },
+  { src: "/images/About Us - Images/05-quality-warehouse-packaging-clear.png", alt: "Warehouse packaging" },
 ];
 
 export default function AboutPage() {
@@ -152,10 +130,9 @@ export default function AboutPage() {
           {/* Right — image runs to the right viewport edge */}
           <div className="hidden lg:block relative">
             <Image
-              src="/images/containers.png"
+              src="/images/About Us - Images/01-hero-port-logistics-clear.png"
               alt="Cargo port at sunset"
               fill
-              unoptimized
               className="object-cover object-center"
               priority
             />
@@ -171,14 +148,10 @@ export default function AboutPage() {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
-            {whoWeAre.map(({ icon: Icon, title, body }) => (
+            {whoWeAre.map(({ icon, title, body }) => (
               <div key={title} className="p-8 border border-[#E8D5A0]/40 bg-white card-lift card-gold-top">
-                {/* Circular icon badge */}
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-5 border border-[#C9A84C]/30"
-                  style={{ background: "linear-gradient(145deg, #142035, #0B1120)" }}
-                >
-                  <Icon size={22} className="text-[#C9A84C]" strokeWidth={1.5} />
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5 border border-[#C9A84C]/30 bg-[#0B1120] relative overflow-hidden">
+                  <Image src={icon} alt={title} width={32} height={32} className="object-contain" />
                 </div>
                 <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold text-[#0B1120] mb-4">
                   {title}
@@ -206,10 +179,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {coreValues.map(({ icon: Icon, title, desc }) => (
+            {coreValues.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Icon size={36} className="text-[#C9A84C]" strokeWidth={1.2} />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
                 </div>
                 <p className="font-semibold text-[#0B1120] text-sm mb-2">{title}</p>
                 <p className="text-[#0B1120]/50 text-xs leading-relaxed">{desc}</p>
@@ -231,10 +204,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {whyChoose.map(({ icon: Icon, title, desc }) => (
+            {whyChoose.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Icon size={36} className="text-[#C9A84C]" strokeWidth={1.2} />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
                 </div>
                 <p className="font-semibold text-[#0B1120] text-sm mb-2">{title}</p>
                 <p className="text-[#0B1120]/50 text-xs leading-relaxed">{desc}</p>
@@ -263,10 +236,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {advantage.map(({ icon: Icon, title, desc }) => (
+            {advantage.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Icon size={36} className="text-[#C9A84C]" strokeWidth={1.2} />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
                 </div>
                 <p className="font-semibold text-white text-sm mb-2">{title}</p>
                 <p className="text-blue-200/40 text-xs leading-relaxed">{desc}</p>
@@ -296,11 +269,9 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-            <div
-              className="relative h-52 border border-[#1A2D4A] overflow-hidden dot-pattern"
-              style={{ background: "linear-gradient(145deg, #0B1530 0%, #0B1120 100%)" }}
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 rounded-full bg-[#C9A84C]/8 blur-[60px]" />
+            <div className="relative h-52 overflow-hidden border border-[#1A2D4A]">
+              <Image src="/images/About Us - Images/02-serving-global-buyers-map-clear.png" alt="Global buyers map" fill className="object-cover" />
+              <div className="absolute inset-0 bg-[#0B1120]/30" />
             </div>
           </div>
 
@@ -311,9 +282,9 @@ export default function AboutPage() {
             </h2>
             <p className="text-[#0B1120]/55 text-sm mb-6">Quality is at the heart of everything we do.</p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
-              {commitmentItems.map(({ icon: Icon, label }) => (
+              {commitmentItems.map(({ icon, label }) => (
                 <div key={label} className="flex flex-col items-center gap-2 text-center">
-                  <Icon size={26} className="text-[#C9A84C]" strokeWidth={1.3} />
+                  <Image src={icon} alt={label} width={32} height={32} className="object-contain" />
                   <p className="text-[#0B1120]/65 text-[10px] font-medium leading-tight">{label}</p>
                 </div>
               ))}
@@ -341,13 +312,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {differentCards.map(({ icon: Icon, title, desc }) => (
+            {differentCards.map(({ icon, title, desc }) => (
               <div key={title} className="bg-white border border-[#E8D5A0]/60 card-gold-top card-lift p-8 flex gap-5 items-start">
-                <div
-                  className="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center border border-[#C9A84C]/30"
-                  style={{ background: "linear-gradient(145deg, #142035, #0B1120)" }}
-                >
-                  <Icon size={20} className="text-[#C9A84C]" strokeWidth={1.5} />
+                <div className="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center border border-[#C9A84C]/30 bg-[#0B1120]">
+                  <Image src={icon} alt={title} width={32} height={32} className="object-contain" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#0B1120] mb-2 text-sm">{title}</h3>
@@ -363,10 +331,9 @@ export default function AboutPage() {
       <div className="relative overflow-hidden py-16">
         <div className="absolute inset-0">
           <Image
-            src="/images/containers.png"
+            src="/images/About Us - Images/07-cta-handshake-background-clear.png"
             alt=""
             fill
-            unoptimized
             className="object-cover object-center"
           />
           <div
