@@ -104,7 +104,7 @@ export default function AboutPage() {
             src="/images/About Us - Images/01-hero-port-logistics-clear.webp"
             alt="Cargo port at sunset"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center brightness-110 contrast-105"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] via-[#0B1120]/20 to-transparent" />
@@ -140,7 +140,7 @@ export default function AboutPage() {
             {whoWeAre.map(({ icon, title, body }) => (
               <div key={title} className="p-8 border border-[#E8D5A0]/40 bg-white card-lift card-gold-top">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5 border border-[#C9A84C]/30 bg-[#0B1120] relative overflow-hidden">
-                  <Image src={icon} alt={title} width={32} height={32} className="object-contain" />
+                  <Image src={icon} alt={title} width={32} height={32} className="object-contain brightness-125" />
                 </div>
                 <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold text-[#0B1120] mb-4">
                   {title}
@@ -171,7 +171,7 @@ export default function AboutPage() {
             {coreValues.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain brightness-125" />
                 </div>
                 <p className="font-semibold text-[#0B1120] text-sm mb-2">{title}</p>
                 <p className="text-[#0B1120]/50 text-xs leading-relaxed">{desc}</p>
@@ -196,7 +196,7 @@ export default function AboutPage() {
             {whyChoose.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain brightness-125" />
                 </div>
                 <p className="font-semibold text-[#0B1120] text-sm mb-2">{title}</p>
                 <p className="text-[#0B1120]/50 text-xs leading-relaxed">{desc}</p>
@@ -228,7 +228,7 @@ export default function AboutPage() {
             {advantage.map(({ icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={icon} alt={title} width={40} height={40} className="object-contain" />
+                  <Image src={icon} alt={title} width={40} height={40} className="object-contain brightness-125" />
                 </div>
                 <p className="font-semibold text-white text-sm mb-2">{title}</p>
                 <p className="text-blue-200/40 text-xs leading-relaxed">{desc}</p>
@@ -259,7 +259,7 @@ export default function AboutPage() {
               ))}
             </ul>
             <div className="relative h-52 overflow-hidden border border-[#1A2D4A]">
-              <Image src="/images/About Us - Images/02-serving-global-buyers-map-clear.webp" alt="Global buyers map" fill className="object-cover" />
+              <Image src="/images/About Us - Images/02-serving-global-buyers-map-clear.webp" alt="Global buyers map" fill className="object-cover brightness-110 contrast-105" />
               <div className="absolute inset-0 bg-[#0B1120]/30" />
             </div>
           </div>
@@ -273,7 +273,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
               {commitmentItems.map(({ icon, label }) => (
                 <div key={label} className="flex flex-col items-center gap-2 text-center">
-                  <Image src={icon} alt={label} width={32} height={32} className="object-contain" />
+                  <Image src={icon} alt={label} width={32} height={32} className="object-contain brightness-125" />
                   <p className="text-[#0B1120]/65 text-[10px] font-medium leading-tight">{label}</p>
                 </div>
               ))}
@@ -281,7 +281,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 gap-2">
               {qualityImages.map(({ src, alt }) => (
                 <div key={alt} className="h-32 overflow-hidden relative">
-                  <Image src={src} alt={alt} fill className="object-cover" />
+                  <Image src={src} alt={alt} fill className="object-cover brightness-110 contrast-105" />
                 </div>
               ))}
             </div>
@@ -304,7 +304,7 @@ export default function AboutPage() {
             {differentCards.map(({ icon, title, desc }) => (
               <div key={title} className="bg-white border border-[#E8D5A0]/60 card-gold-top card-lift p-8 flex gap-5 items-start">
                 <div className="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center border border-[#C9A84C]/30 bg-[#0B1120]">
-                  <Image src={icon} alt={title} width={32} height={32} className="object-contain" />
+                  <Image src={icon} alt={title} width={32} height={32} className="object-contain brightness-125" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#0B1120] mb-2 text-sm">{title}</h3>
@@ -323,7 +323,7 @@ export default function AboutPage() {
             src="/images/About Us - Images/07-cta-handshake-background-clear.webp"
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-center brightness-110 contrast-105"
           />
           <div
             className="absolute inset-0"
