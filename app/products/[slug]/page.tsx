@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, CheckCircle, Package } from "lucide-react";
 import { products, getProductBySlug } from "@/lib/products";
 import MarqueeTicker from "@/components/MarqueeTicker";
+import PowderGrid from "@/components/PowderGrid";
 import Reveal from "@/components/Reveal";
 
 export async function generateStaticParams() {
@@ -105,22 +106,26 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div className="ornament max-w-[140px] mb-7">
                   <span className="text-[#C9A84C]/50 text-xs">✦</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {product.grades.map((grade) => (
-                    <div
-                      key={grade.name}
-                      className="card-gold-top bg-white border border-[#E8D5A0]/60 p-6 hover:shadow-md transition-shadow duration-200"
-                    >
-                      <h3 className="font-semibold text-[#0B1120] text-sm leading-snug mb-2 flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] mt-1.5 shrink-0" />
-                        {grade.name}
-                      </h3>
-                      {grade.description && (
-                        <p className="text-[#0B1120]/50 text-xs leading-relaxed pl-3.5">{grade.description}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                {slug === "dehydrated-vegetable-powders" ? (
+                  <PowderGrid />
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {product.grades.map((grade) => (
+                      <div
+                        key={grade.name}
+                        className="card-gold-top bg-white border border-[#E8D5A0]/60 p-6 hover:shadow-md transition-shadow duration-200"
+                      >
+                        <h3 className="font-semibold text-[#0B1120] text-sm leading-snug mb-2 flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] mt-1.5 shrink-0" />
+                          {grade.name}
+                        </h3>
+                        {grade.description && (
+                          <p className="text-[#0B1120]/50 text-xs leading-relaxed pl-3.5">{grade.description}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </Reveal>
 

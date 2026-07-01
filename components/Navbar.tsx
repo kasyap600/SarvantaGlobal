@@ -4,12 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/why-sarvanta", label: "Why Us" },
+  { href: "/products", label: "Products", hasDropdown: true },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
@@ -41,11 +40,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Sarvanta Global"
-              width={160}
-              height={52}
-              className="h-[52px] w-auto object-contain"
+              width={200}
+              height={66}
+              className="h-[66px] w-auto object-contain"
               priority
             />
           </Link>
@@ -53,16 +52,17 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
-              const active = pathname === link.href;
+              const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-[13px] tracking-wide transition-colors duration-200 ${
+                  className={`relative inline-flex items-center gap-1 px-4 py-2 text-[13px] tracking-wide transition-colors duration-200 ${
                     active ? "text-[#C9A84C]" : "text-blue-200/60 hover:text-white"
                   }`}
                 >
                   {link.label}
+                  {link.hasDropdown && <ChevronDown size={12} className="opacity-60" />}
                   {active && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#C9A84C]" />
                   )}
