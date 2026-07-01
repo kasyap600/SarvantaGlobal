@@ -50,7 +50,7 @@ export default function ContactPage() {
                   {[
                     { icon: User, label: "Contact Person", value: "Kumar", href: undefined },
                     { icon: Phone, label: "Phone / WhatsApp", value: "+91 99004 22441", href: "tel:+919900422441" },
-                    { icon: Mail, label: "Email", value: "info@sarvantaglobal.com", href: "mailto:info@sarvantaglobal.com" },
+                    { icon: Mail, label: "Email", value: "info@sarvantaglobal.in", href: "mailto:info@sarvantaglobal.in" },
                     { icon: MapPin, label: "Location", value: "Bangalore, Karnataka, India", href: undefined },
                     { icon: Clock, label: "Response Time", value: "Within 24 hours", href: undefined },
                   ].map(({ icon: Icon, label, value, href }) => (

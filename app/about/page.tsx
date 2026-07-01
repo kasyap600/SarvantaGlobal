@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const I = "/images/About Us - Images/icons";
 
@@ -86,28 +87,31 @@ const differentCards = [
 ];
 
 const qualityImages = [
-  { src: "/images/About Us - Images/03-quality-lab-testing-clear.png",        alt: "Quality lab testing" },
-  { src: "/images/About Us - Images/04-quality-spice-powders-clear.png",       alt: "Quality spice powders" },
-  { src: "/images/About Us - Images/05-quality-warehouse-packaging-clear.png", alt: "Warehouse packaging" },
+  { src: "/images/About Us - Images/03-quality-lab-testing-clear.webp",        alt: "Quality lab testing" },
+  { src: "/images/About Us - Images/04-quality-spice-powders-clear.webp",       alt: "Quality spice powders" },
+  { src: "/images/About Us - Images/05-quality-warehouse-packaging-clear.webp", alt: "Warehouse packaging" },
 ];
 
 export default function AboutPage() {
   return (
     <div>
 
-      {/* ── HERO — text left, image right bleeds to viewport edge ── */}
-      <div
-        className="relative overflow-hidden min-h-[420px] flex flex-col"
-        style={{ background: "linear-gradient(145deg, #0B1120 0%, #080D1A 55%, #0B1530 100%)" }}
-      >
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
-        <div className="absolute inset-0 hero-pattern pointer-events-none opacity-40" />
+      {/* ── HERO ── */}
+      <div className="relative overflow-hidden bg-[#0B1120] min-h-[420px] flex items-center">
+        <div className="absolute inset-0 dot-pattern opacity-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+          <Image
+            src="/images/About Us - Images/01-hero-port-logistics-clear.webp"
+            alt="Cargo port at sunset"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] via-[#0B1120]/20 to-transparent" />
+        </div>
 
-        {/* Full-width grid: left half padded like container, right half is raw image */}
-        <div className="flex-1 grid lg:grid-cols-2">
-
-          {/* Left — text, constrained with container-style padding */}
-          <div className="flex flex-col justify-center py-16 px-4 sm:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12 relative z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:pl-8 lg:pr-0 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <Reveal>
             <div className="inline-flex items-center gap-3 mb-5">
               <div className="h-px w-6 bg-[#C9A84C]/70" />
               <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold">
@@ -125,23 +129,8 @@ export default function AboutPage() {
             <p className="text-blue-100/60 leading-relaxed text-base max-w-md">
               Building trusted global partnerships through quality, integrity, and responsible sourcing.
             </p>
-          </div>
-
-          {/* Right — image runs to the right viewport edge */}
-          <div className="hidden lg:block relative">
-            <Image
-              src="/images/About Us - Images/01-hero-port-logistics-clear.png"
-              alt="Cargo port at sunset"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            {/* Fade left edge into the dark bg */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#080D1A] via-[#080D1A]/10 to-transparent" />
-          </div>
+          </Reveal>
         </div>
-
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/30 to-transparent" />
       </div>
 
       {/* ── WHO WE ARE / VISION / MISSION ── */}
@@ -270,7 +259,7 @@ export default function AboutPage() {
               ))}
             </ul>
             <div className="relative h-52 overflow-hidden border border-[#1A2D4A]">
-              <Image src="/images/About Us - Images/02-serving-global-buyers-map-clear.png" alt="Global buyers map" fill className="object-cover" />
+              <Image src="/images/About Us - Images/02-serving-global-buyers-map-clear.webp" alt="Global buyers map" fill className="object-cover" />
               <div className="absolute inset-0 bg-[#0B1120]/30" />
             </div>
           </div>
@@ -331,7 +320,7 @@ export default function AboutPage() {
       <div className="relative overflow-hidden py-16">
         <div className="absolute inset-0">
           <Image
-            src="/images/About Us - Images/07-cta-handshake-background-clear.png"
+            src="/images/About Us - Images/07-cta-handshake-background-clear.webp"
             alt=""
             fill
             className="object-cover object-center"

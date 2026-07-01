@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: "Sarvanta Website <noreply@sarvantaglobal.com>",
-        to: ["info@sarvantaglobal.com"],
+        to: ["info@sarvantaglobal.in"],
         reply_to: email,
         subject: `New Inquiry: ${product} — ${name}${company ? ` (${company})` : ""}`,
         html: `

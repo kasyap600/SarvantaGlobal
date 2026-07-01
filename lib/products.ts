@@ -59,7 +59,7 @@ export const products: Product[] = [
       "Hygienically Packed",
     ],
     applications: ["Spice Blends", "Food Processing", "Seasonings", "Hotels & Restaurants", "Retail Packaging", "Bulk Industrial Use"],
-    image: "/images/black-pepper.png",
+    image: "/images/black-pepper.webp",
   },
   {
     slug: "white-pepper",
@@ -95,7 +95,7 @@ export const products: Product[] = [
       "Consistent Supply",
     ],
     applications: ["Premium Seasonings", "Soups & Sauces", "Food Manufacturing", "Retail Packaging", "Hotels & Restaurants"],
-    image: "/images/white-pepper.png",
+    image: "/images/white-pepper.webp",
   },
   {
     slug: "red-chillies",
@@ -186,7 +186,7 @@ export const products: Product[] = [
       "Hygienically Processed & Packed",
     ],
     applications: ["Spice Powders", "Oleoresin Extraction", "Color Extraction", "Food Processing", "Export Markets", "Retail & Industrial"],
-    image: "/images/red-chillies.png",
+    image: "/images/red-chillies.webp",
   },
   {
     slug: "moringa-powder",
@@ -226,7 +226,7 @@ export const products: Product[] = [
       "Consistent Quality",
     ],
     applications: ["Health Supplements", "Functional Foods & Beverages", "Nutraceuticals", "Cosmetics & Personal Care", "Animal Feed", "Nutrition Bars & Snacks"],
-    image: "/images/moringa-powder.png",
+    image: "/images/moringa-powder.webp",
   },
   {
     slug: "jaggery-powder",
@@ -266,7 +266,7 @@ export const products: Product[] = [
       "Lab Tested",
     ],
     applications: ["Bakery & Confectionery", "Beverages", "Dairy Products", "Health & Wellness Products", "Traditional Sweets", "Food Processing"],
-    image: "/images/jaggery.png",
+    image: "/images/jaggery.webp",
   },
   {
     slug: "dehydrated-vegetable-powders",
@@ -311,7 +311,7 @@ export const products: Product[] = [
       "Export Ready",
     ],
     applications: ["Food Processing", "Seasoning Blends", "Soups & Sauces", "Nutraceuticals", "Retail Packaging", "Industrial Use"],
-    image: "/images/powders.png",
+    image: "/images/powders.webp",
   },
 ];
 
