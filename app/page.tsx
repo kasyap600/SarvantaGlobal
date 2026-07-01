@@ -4,7 +4,6 @@ import { ArrowRight, Leaf, Package, Headphones, ShieldCheck, Sprout, Globe2, Han
 import { products } from "@/lib/products";
 import Reveal from "@/components/Reveal";
 import MarqueeTicker from "@/components/MarqueeTicker";
-import WorldMapClient from "@/components/WorldMapClient";
 
 const trustBadges = [
   {
@@ -43,11 +42,8 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#0B1120] min-h-[88vh] flex items-center">
-        {/* World map background */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <WorldMapClient />
-        </div>
-        {/* Dark overlay gradient */}
+        <div className="absolute inset-0 dot-pattern opacity-20 pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#C9A84C]/5 blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] via-[#0B1120]/80 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-[#0B1120]/40 pointer-events-none" />
 
@@ -261,10 +257,8 @@ export default function Home() {
 
       {/* ── CTA ── */}
       <section className="relative overflow-hidden bg-[#0B1120] py-24">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <WorldMapClient />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120]/80 via-[#0B1120]/60 to-[#0B1120]/80 pointer-events-none" />
+        <div className="absolute inset-0 dot-pattern opacity-15 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-[#C9A84C]/6 blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
