@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Sarvanta Website <noreply@sarvantaglobal.com>",
+        from: "Sarvanta Website <noreply@sarvantaglobal.in>",
         to: ["info@sarvantaglobal.in"],
         reply_to: email,
         subject: `New Inquiry: ${product} — ${name}${company ? ` (${company})` : ""}`,
@@ -39,7 +39,9 @@ export async function POST(req: NextRequest) {
     });
 
     if (!res.ok) {
-      return NextResponse.json({ error: "Email failed" }, { status: 500 });
+      const errBody = await res.json().catch(() => ({}));
+      console.error("Resend error:", res.status, errBody);
+      return NextResponse.json({ error: "Email failed", detail: errBody }, { status: 500 });
     }
   } else {
     console.log("Inquiry received (no RESEND_API_KEY configured):", { name, company, email, product, quantity });
