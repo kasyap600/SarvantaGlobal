@@ -96,7 +96,7 @@ export default function ProductCategories() {
         icon={Sprout}
         title="Premium Spices"
         desc="Finest quality Indian spices sourced with care and prepared to meet global standards."
-        href="/products"
+        href="/products/spices"
         cta="View All Spices"
         delay={0.05}
         items={spices}
@@ -119,7 +119,7 @@ export default function ProductCategories() {
         icon={Layers}
         title="Natural Powders"
         desc="Wholesome natural powders with rich nutrition and exceptional quality."
-        href="/products/moringa-powder"
+        href="/products/powders"
         cta="View All Powders"
         delay={0.1}
         items={naturalpowders}

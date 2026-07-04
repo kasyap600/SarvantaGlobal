@@ -22,7 +22,7 @@ const productLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080D1A] text-blue-100/60 relative overflow-hidden">
+    <footer className="bg-[#0B1120] text-blue-100/60 relative overflow-hidden">
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
 
       {/* Main footer */}
@@ -33,11 +33,11 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center mb-4 w-fit">
               <Image
-                src="/images/logo.webp"
+                src="/images/Logo.png"
                 alt="Sarvanta Global"
-                width={160}
-                height={52}
-                className="h-[52px] w-auto object-contain"
+                width={220}
+                height={73}
+                className="h-[64px] w-auto object-contain"
               />
             </Link>
             <p className="text-blue-200/35 text-xs leading-relaxed max-w-xs mb-5">
