@@ -217,8 +217,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             {product.qualityPoints.length > 0 && (
               <Reveal direction="left" delay={0.1}>
                 <div className="card-gold-top bg-white border border-[#E8D5A0]/60 p-6 shadow-sm">
-                  <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-5 flex items-center gap-2">
-                    <span className="w-4 h-px bg-[#C9A84C]" /> Quality Assurance
+                  <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-5">
+                    Quality Assurance
                   </h3>
                   <ul className="space-y-3">
                     {product.qualityPoints.map((point) => (
@@ -253,8 +253,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             {product.applications.length > 0 && (
               <Reveal direction="left" delay={0.3}>
                 <div className="card-gold-top bg-white border border-[#E8D5A0]/60 p-6 shadow-sm">
-                  <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-5 flex items-center gap-2">
-                    <span className="w-4 h-px bg-[#C9A84C]" /> Applications
+                  <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-5">
+                    Applications
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {product.applications.map((app) => (

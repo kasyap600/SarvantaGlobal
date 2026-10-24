@@ -82,8 +82,8 @@ export default function ContactPage() {
             </div>
 
             <div className="card-gold-top bg-white border border-[#E8D5A0]/60 p-8">
-              <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-6 flex items-center gap-2">
-                <span className="w-4 h-px bg-[#C9A84C]" /> What Happens Next?
+              <h3 className="text-[10px] tracking-[0.3em] uppercase font-semibold text-[#0B1120] mb-6">
+                What Happens Next?
               </h3>
               <ol className="space-y-5">
                 {[

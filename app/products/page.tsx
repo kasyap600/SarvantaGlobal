@@ -30,12 +30,11 @@ const industries = [
 ];
 
 const catalogueMap: Record<string, string> = {
-  "red-chillies":                 "/images/Product Catalouges/RedChilli.png",
-  "black-pepper":                 "/images/Product Catalouges/Black Pepper.png",
-  "white-pepper":                 "/images/Product Catalouges/White Pepper.png",
-  "moringa-powder":               "/images/Product Catalouges/Moringa Powder.png",
-  "jaggery-powder":               "/images/Product Catalouges/Jaggery Powder.png",
-  "dehydrated-vegetable-powders": "/images/brochure.webp",
+  "red-chillies":   "/images/Product Catalouges/RedChilli.png",
+  "black-pepper":   "/images/Product Catalouges/Black Pepper.png",
+  "white-pepper":   "/images/Product Catalouges/White Pepper.png",
+  "moringa-powder": "/images/Product Catalouges/Moringa Powder.png",
+  "jaggery-powder": "/images/Product Catalouges/Jaggery Powder.png",
 };
 
 export default function ProductsPage() {
@@ -53,8 +52,8 @@ export default function ProductsPage() {
 
         <div className="relative w-full px-4 sm:px-8 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-4 flex items-center gap-3">
-              <span className="h-px w-6 bg-[#C9A84C]" /> Our Products
+            <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-4">
+              Our Products
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2">
               Premium Agricultural
@@ -135,7 +134,7 @@ export default function ProductsPage() {
           </Reveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {products.map((product, i) => {
-              const catalogueHref = catalogueMap[product.slug] ?? "/images/brochure.webp";
+              const catalogueHref = catalogueMap[product.slug];
               return (
                 <Reveal key={product.slug} delay={i * 0.07} className="h-full">
                   <div className="group border border-[#E8D5A0]/60 bg-white hover:border-[#C9A84C] overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
@@ -152,13 +151,19 @@ export default function ProductsPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <a
-                      href={catalogueHref}
-                      download
-                      className="flex items-center justify-center gap-2 bg-[#0B1120] text-white text-[11px] font-semibold py-2.5 group-hover:bg-[#C9A84C] group-hover:text-[#0B1120] transition-colors duration-300"
-                    >
-                      Download Catalogue <Download size={11} />
-                    </a>
+                    {catalogueHref ? (
+                      <a
+                        href={catalogueHref}
+                        download
+                        className="flex items-center justify-center gap-2 bg-[#0B1120] text-white text-[11px] font-semibold py-2.5 group-hover:bg-[#C9A84C] group-hover:text-[#0B1120] transition-colors duration-300"
+                      >
+                        Download Catalogue <Download size={11} />
+                      </a>
+                    ) : (
+                      <div className="flex items-center justify-center gap-1.5 bg-[#FAF6F0] text-[#0B1120]/40 text-[11px] font-medium py-2.5 border-t border-[#E8D5A0]/30 select-none">
+                        Catalogue Coming Soon
+                      </div>
+                    )}
                   </div>
                 </Reveal>
               );
@@ -233,8 +238,8 @@ export default function ProductsPage() {
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C9A84C]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <Reveal>
-            <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-3 flex items-center gap-2">
-              <span className="h-px w-5 bg-[#C9A84C]" /> Partner With Us
+            <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-3">
+              Partner With Us
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold text-white mb-3">
               Looking for a Reliable Supply Partner?

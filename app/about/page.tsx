@@ -112,12 +112,10 @@ export default function AboutPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:pl-8 lg:pr-0 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <div className="inline-flex items-center gap-3 mb-5">
-              <div className="h-px w-6 bg-[#C9A84C]/70" />
+            <div className="mb-5">
               <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold">
                 About Sarvanta Global
               </p>
-              <div className="h-px w-6 bg-[#C9A84C]/70" />
             </div>
             <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-semibold text-white leading-tight mb-4">
               Connecting Markets.<br />

@@ -47,7 +47,6 @@ export default function Home() {
           <div className="max-w-xl">
             <Reveal delay={0}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C9A84C]" />
                 <span className="text-[#C9A84C] text-[10px] tracking-[0.45em] uppercase font-semibold">
                   Connecting Markets. Creating Opportunities.
                 </span>

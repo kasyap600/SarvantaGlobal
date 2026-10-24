@@ -70,12 +70,11 @@ function CategorySection({
   return (
     <div className="mb-12">
       <Reveal delay={delay}>
-        <div className="flex items-center gap-3 mb-2">
-          <div className="h-0.5 w-6 bg-[#C9A84C]" />
+        <div className="flex items-center gap-2 mb-2">
           <h3 className="text-[#0B1120] font-bold text-base tracking-wide">{title}</h3>
           <span className="text-[#0B1120]/30 text-xs">({items.length})</span>
         </div>
-        <p className="text-[#0B1120]/50 text-xs mb-5 ml-9">{description}</p>
+        <p className="text-[#0B1120]/50 text-xs mb-5">{description}</p>
       </Reveal>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {items.map((product, i) => (
@@ -118,12 +117,11 @@ export default function ProductCategories() {
       {/* Dehydrated Vegetable & Fruit Powders — clean square product cards with no logos/flyers */}
       <div className="mb-12">
         <Reveal delay={0.2}>
-          <div className="flex items-center gap-3 mb-2">
-            <div className="h-0.5 w-6 bg-[#C9A84C]" />
+          <div className="flex items-center gap-2 mb-2">
             <h3 className="text-[#0B1120] font-bold text-base tracking-wide">Dehydrated Vegetable & Fruit Powders</h3>
             <span className="text-[#0B1120]/30 text-xs">({vegPowders.length})</span>
           </div>
-          <p className="text-[#0B1120]/50 text-xs mb-5 ml-9">A wide range of dehydrated vegetable and fruit powders for food processing and industrial applications.</p>
+          <p className="text-[#0B1120]/50 text-xs mb-5">A wide range of dehydrated vegetable and fruit powders for food processing and industrial applications.</p>
         </Reveal>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-3">
