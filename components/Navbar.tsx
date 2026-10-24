@@ -7,9 +7,10 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, Sprout, Layers, Package } from "lucide-react";
 
 const productDropdown = [
-  { href: "/products/spices",                    label: "Premium Spices",               desc: "Red Chillies, Black Pepper, White Pepper", icon: Sprout  },
-  { href: "/products/powders",                   label: "Natural Powders",              desc: "Moringa Powder, Jaggery Powder",            icon: Layers  },
-  { href: "/products/dehydrated-vegetable-powders", label: "Vegetable Powders",        desc: "13+ dehydrated vegetable powders",          icon: Package },
+  { href: "/products",                              label: "Whole Spices",                 desc: "Black Pepper, Red Chillies, Turmeric, Cumin", icon: Sprout  },
+  { href: "/products",                              label: "Ground Spice Powders",         desc: "Turmeric, Chilli, Cumin, Coriander Powder",   icon: Layers  },
+  { href: "/products",                              label: "Superfoods & Natural Powders", desc: "Moringa, Ashwagandha, Amla, Jaggery",         icon: Package },
+  { href: "/products/dehydrated-vegetable-powders", label: "Dehydrated Powders",           desc: "14+ vegetable & fruit powders",                icon: Package },
 ];
 
 const navLinks = [
@@ -100,7 +101,7 @@ export default function Navbar() {
                           </Link>
                           {productDropdown.map(({ href, label, desc, icon: Icon }) => (
                             <Link
-                              key={href}
+                              key={label}
                               href={href}
                               onClick={() => setDropdown(false)}
                               className="flex items-start gap-3 px-3 py-3 hover:bg-[#C9A84C]/5 transition-colors group rounded-sm"
@@ -184,7 +185,7 @@ export default function Navbar() {
                       </Link>
                       {productDropdown.map(({ href, label, icon: Icon }) => (
                         <Link
-                          key={href}
+                          key={label}
                           href={href}
                           onClick={() => setOpen(false)}
                           className="flex items-center gap-2 py-2 text-sm text-blue-200/60 hover:text-white transition-colors"

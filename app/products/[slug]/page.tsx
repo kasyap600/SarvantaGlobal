@@ -70,15 +70,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             {product.image && (
               <Reveal direction="left" className="lg:w-80 xl:w-96 shrink-0">
-                <div className="relative w-full h-64 lg:h-80 overflow-hidden border border-[#C9A84C]/20">
+                <div className="relative aspect-square w-full overflow-hidden border border-[#C9A84C]/20 bg-[#111827]">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 384px"
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" />
                 </div>
               </Reveal>

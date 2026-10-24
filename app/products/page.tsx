@@ -143,8 +143,14 @@ export default function ProductsPage() {
                       <span className="text-[#0B1120]/50 text-[9px] uppercase tracking-wide">Premium Indian</span>
                       <span className="text-[#0B1120] font-semibold text-[10px] leading-tight">{product.name}</span>
                     </div>
-                    <div className="relative h-44 shrink-0 overflow-hidden">
-                      <Image src={product.image} alt={product.name} fill className="object-cover brightness-105 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="relative aspect-square w-full shrink-0 overflow-hidden bg-[#F9F6F1]">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
                     <a
                       href={catalogueHref}

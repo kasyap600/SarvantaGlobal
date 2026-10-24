@@ -58,11 +58,12 @@ export default function PowdersPage() {
             <Reveal key={product.slug} delay={i * 0.08}>
               <div className="group border border-[#E8D5A0]/60 bg-white hover:border-[#C9A84C] hover:shadow-lg transition-all duration-300 flex flex-col h-full">
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#111827]">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover brightness-105 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/60 to-transparent" />

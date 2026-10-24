@@ -1,43 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Leaf, Package, Headphones, ShieldCheck, Sprout, Globe2, Users, Truck, Tag } from "lucide-react";
-import { products } from "@/lib/products";
+import { ArrowRight, Leaf, ShieldCheck, Truck, Headphones } from "lucide-react";
+import { products, getProductsByCategory } from "@/lib/products";
 import Reveal from "@/components/Reveal";
 import MarqueeTicker from "@/components/MarqueeTicker";
 
 const HP = "/images/Home Page - Images";
 
-// Homepage-specific product images (higher quality shots)
-const productImages: Record<string, string> = {
-  "red-chillies":                  `${HP}/03-product-red-chillies-clear.webp`,
-  "black-pepper":                  `${HP}/04-product-black-pepper-clear.webp`,
-  "white-pepper":                  `${HP}/05-product-white-pepper-clear.webp`,
-  "moringa-powder":                `${HP}/06-product-moringa-powder-clear.webp`,
-  "jaggery-powder":                `${HP}/07-product-jaggery-powder-clear.webp`,
-  "dehydrated-vegetable-powders":  `${HP}/08-product-vegetable-powders-clear.webp`,
-};
+const wholeSpices = getProductsByCategory("Whole Spices");
+const groundPowders = getProductsByCategory("Ground Spice Powders");
+const superfoods = getProductsByCategory("Superfoods & Natural Powders");
 
-const trustBadges = [
-  { icon: Leaf,       title: "Premium Products",        desc: "Carefully sourced agricultural commodities that meet international standards." },
-  { icon: Package,    title: "Export-Ready Packaging",  desc: "Customized packaging solutions for bulk, retail and private label requirements." },
-  { icon: Headphones, title: "Responsive Support",      desc: "Prompt quotations and dedicated assistance for a seamless buyer experience." },
-  { icon: ShieldCheck,title: "Quality Focus",           desc: "Strict quality checks and ethical practices to ensure consistent product excellence." },
+// Featured products for the homepage grid (show a selection from each category)
+const featuredProducts = [
+  ...wholeSpices.slice(0, 3),
+  ...groundPowders.slice(0, 2),
+  ...superfoods.slice(0, 1),
 ];
 
-const whyPoints = [
-  { icon: Sprout,     title: "Trusted Sourcing",    desc: "Partnering with carefully selected growers and processors across India." },
-  { icon: ShieldCheck,title: "Consistent Quality",  desc: "Products sourced and processed to meet international quality expectations." },
-  { icon: Package,    title: "Flexible Packaging",  desc: "Bulk and customized packaging solutions designed for global buyers." },
-  { icon: Truck,      title: "Reliable Supply",     desc: "Dependable sourcing and timely deliveries through trusted supply networks." },
-  { icon: Tag,        title: "Competitive Pricing", desc: "Transparent pricing backed by efficient procurement and long-term relationships." },
-  { icon: Headphones, title: "Responsive Support",  desc: "Prompt quotations, dedicated communication, and customer-focused service." },
-];
-
-const aboutIcons = [
-  { icon: Sprout,     label: "Ethical Sourcing" },
-  { icon: Globe2,     label: "International Standards" },
-  { icon: ShieldCheck,label: "Transparent Process" },
-  { icon: Users,      label: "Customer First Approach" },
+const strengths = [
+  { icon: Leaf,        title: "Premium Quality",       desc: "Carefully sourced from India's finest growing regions." },
+  { icon: ShieldCheck, title: "Quality Assurance",     desc: "Strict quality checks at every stage of processing." },
+  { icon: Truck,       title: "Reliable Supply",       desc: "Timely delivery through trusted logistics networks." },
+  { icon: Headphones,  title: "Responsive Support",    desc: "Dedicated assistance and prompt quotations." },
 ];
 
 
@@ -45,8 +30,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-[#0B1120] min-h-[90vh] flex items-center">
-        {/* Right-side hero image */}
+      <section className="relative overflow-hidden bg-[#0B1120] min-h-[88vh] flex items-center">
         <div className="absolute inset-0">
           <Image
             src={`${HP}/01-hero-commerce-scene-clear.webp`}
@@ -55,25 +39,23 @@ export default function Home() {
             className="object-cover object-right"
             priority
           />
-          {/* Left fade for text readability, right side stays bright */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] from-30% via-[#0B1120]/40 via-50% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] from-30% via-[#0B1120]/50 via-55% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/50 via-transparent to-transparent" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="max-w-xl">
             <Reveal delay={0}>
-              <div className="flex items-center gap-3 mb-7">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-8 bg-[#C9A84C]" />
                 <span className="text-[#C9A84C] text-[10px] tracking-[0.45em] uppercase font-semibold">
                   Connecting Markets. Creating Opportunities.
                 </span>
-                <div className="h-px w-8 bg-[#C9A84C]" />
               </div>
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
+              <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-6">
                 Premium<br />
                 <span className="text-[#C9A84C]">Agricultural</span><br />
                 <span className="text-[#C9A84C]">Commodities</span><br />
@@ -83,7 +65,7 @@ export default function Home() {
 
             <Reveal delay={0.16}>
               <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-sm">
-                Sarvanta Global is a premium agricultural commodities company connecting international buyers with responsibly sourced products from India. Through dependable sourcing, uncompromising quality, and customer-focused service, we help businesses build reliable supply partnerships across global markets.
+                Sarvanta Global connects international buyers with responsibly sourced spices, powders, and agricultural products from India.
               </p>
             </Reveal>
 
@@ -107,16 +89,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUST BADGES ── */}
+      {/* ── STRENGTHS BAR ── */}
       <section className="bg-[#111827] border-t border-[#C9A84C]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/5">
-            {trustBadges.map(({ icon: Icon, title, desc }, i) => (
-              <Reveal key={title} delay={i * 0.08}>
-                <div className="flex flex-col gap-2 px-8 py-2">
-                  <Icon size={22} className="text-[#C9A84C]" strokeWidth={1.5} />
-                  <h3 className="text-white text-[11px] font-bold tracking-[0.14em] uppercase mt-1">{title}</h3>
-                  <p className="text-white/35 text-[11px] leading-relaxed">{desc}</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {strengths.map(({ icon: Icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 0.06}>
+                <div className="flex items-start gap-3">
+                  <Icon size={20} className="text-[#C9A84C] mt-0.5 shrink-0" strokeWidth={1.5} />
+                  <div>
+                    <h3 className="text-white text-xs font-semibold tracking-wide mb-1">{title}</h3>
+                    <p className="text-white/35 text-[11px] leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -126,11 +110,11 @@ export default function Home() {
 
       <MarqueeTicker />
 
-      {/* ── ABOUT / CONNECTING MARKETS ── */}
+      {/* ── ABOUT SECTION ── */}
       <section className="bg-white py-0">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-            {/* Left — farm image, full height */}
+            {/* Left — farm image */}
             <Reveal direction="right" className="h-full">
               <div className="relative h-[320px] lg:h-full lg:min-h-full min-h-[320px] px-3 py-6 bg-white">
                 <div className="relative w-full h-full outline outline-4 outline-white outline-offset-[-12px]">
@@ -150,31 +134,16 @@ export default function Home() {
                 <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-4">
                   About Sarvanta Global
                 </p>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-[#0B1120] leading-tight mb-1">
-                  Connecting Markets.
-                </h2>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-[#0B1120] leading-tight mb-5">
-                  Creating Opportunities.
+                <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-semibold text-[#0B1120] leading-tight mb-5">
+                  Connecting Markets.<br />Creating Opportunities.
                 </h2>
                 <div className="w-10 h-0.5 bg-[#C9A84C] mb-6" />
-                <p className="text-[#0B1120]/60 text-sm leading-relaxed mb-3">
+                <p className="text-[#0B1120]/60 text-sm leading-relaxed mb-4">
                   Sarvanta Global partners with trusted growers and processors across India to deliver premium agricultural commodities to buyers worldwide.
                 </p>
                 <p className="text-[#0B1120]/60 text-sm leading-relaxed mb-8">
                   We believe successful trade is built on consistency, transparency, and long-term relationships.
                 </p>
-
-                <div className="grid grid-cols-4 gap-3 mb-10">
-                  {aboutIcons.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex flex-col items-center text-center gap-2">
-                      <div className="w-12 h-12 flex items-center justify-center">
-                        <Icon size={28} className="text-[#C9A84C]" strokeWidth={1.3} />
-                      </div>
-                      <span className="text-[#0B1120]/60 text-[10px] leading-tight">{label}</span>
-                    </div>
-                  ))}
-                </div>
-
                 <div>
                   <Link
                     href="/about"
@@ -189,49 +158,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRODUCT PORTFOLIO ── */}
+      {/* ── PRODUCT CATEGORIES OVERVIEW ── */}
+      <section className="bg-[#F9F6F1] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-12">
+              <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-3">
+                Our Product Portfolio
+              </p>
+              <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold text-[#0B1120] leading-tight">
+                Premium Agricultural Commodities
+              </h2>
+              <p className="text-[#0B1120]/50 text-sm mt-3 max-w-lg mx-auto">
+                Explore our range of carefully sourced spices, powders, and natural products from India.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Category Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+            {[
+              { title: "Whole Spices", count: wholeSpices.length, products: wholeSpices, color: "#8B1A1A" },
+              { title: "Ground Powders", count: groundPowders.length, products: groundPowders, color: "#D4A017" },
+              { title: "Superfoods", count: superfoods.length, products: superfoods, color: "#3A6B35" },
+              { title: "Dehydrated Powders", count: 14, products: [products.find(p => p.slug === "dehydrated-vegetable-powders")!], color: "#4A7C3F" },
+            ].map((cat, i) => (
+              <Reveal key={cat.title} delay={i * 0.08}>
+                <Link href="/products" className="group block bg-white border border-[#E8D5A0]/40 p-5 hover:border-[#C9A84C]/60 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: cat.color }} />
+                    <h3 className="text-[#0B1120] font-bold text-sm">{cat.title}</h3>
+                  </div>
+                  <p className="text-[#0B1120]/40 text-xs mb-4">{cat.count} products</p>
+                  <div className="flex gap-2 overflow-hidden">
+                    {cat.products.slice(0, 3).map((p) => (
+                      <div key={p.slug} className="relative w-16 h-16 shrink-0 border border-[#E8D5A0]/30 overflow-hidden bg-white/5">
+                        <Image src={p.image} alt={p.name} fill sizes="64px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-[#C9A84C] text-[11px] font-semibold mt-4 group-hover:gap-2 transition-all duration-200">
+                    View All <ArrowRight size={10} />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED PRODUCTS GRID ── */}
       <section className="bg-[#0B1120] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
               <div>
                 <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-semibold mb-3">
-                  Our Product Portfolio
+                  Featured Products
                 </p>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-bold text-white leading-snug max-w-xl">
-                  Carefully sourced agricultural commodities<br className="hidden md:block" /> that meet international quality standards.
+                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-bold text-white leading-snug">
+                  Our Most Popular Commodities
                 </h2>
               </div>
               <Link
                 href="/products"
                 className="inline-flex items-center gap-1.5 text-[#C9A84C] text-sm font-semibold hover:gap-3 transition-all duration-200 shrink-0"
               >
-                View All Products <ArrowRight size={14} />
+                View All {products.length} Products <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {products.map((product, i) => (
-              <Reveal key={product.slug} delay={i * 0.07}>
+            {featuredProducts.map((product, i) => (
+              <Reveal key={product.slug} delay={i * 0.06}>
                 <Link
                   href={`/products/${product.slug}`}
                   className="group bg-[#111827] border border-white/5 overflow-hidden hover:border-[#C9A84C]/30 hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full"
                 >
-                  <div className="relative h-36 overflow-hidden">
+                  <div className="relative aspect-square w-full overflow-hidden bg-[#161F30]">
                     <Image
-                      src={productImages[product.slug] ?? product.image}
+                      src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover brightness-110 contrast-105 group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-3 flex flex-col flex-1 border-t border-white/5">
+                    <p className="text-[#C9A84C]/60 text-[9px] uppercase tracking-wide mb-1">{product.category}</p>
                     <h3 className="text-white font-bold text-sm leading-tight mb-1">{product.name}</h3>
-                    <p className="text-white/40 text-[11px] leading-relaxed flex-1 line-clamp-3">
-                      {product.description}
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-[#C9A84C] text-[11px] font-semibold mt-3 group-hover:gap-2 transition-all duration-200">
+                    <span className="inline-flex items-center gap-1 text-[#C9A84C] text-[11px] font-semibold mt-auto pt-2 group-hover:gap-2 transition-all duration-200">
                       View Details <ArrowRight size={10} />
                     </span>
                   </div>
@@ -242,33 +259,8 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* ── WHY GLOBAL BUYERS CHOOSE US ── */}
-      <section className="bg-white py-16 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <p className="text-[#0B1120]/60 text-[10px] tracking-[0.45em] uppercase font-semibold text-center mb-12">
-              Why Global Buyers Choose Sarvanta Global
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {whyPoints.map(({ icon: Icon, title, desc }, i) => (
-              <Reveal key={title} delay={i * 0.07}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <Icon size={34} className="text-[#C9A84C]" strokeWidth={1.2} />
-                  <h4 className="text-[#0B1120] font-semibold text-[13px]">{title}</h4>
-                  <p className="text-[#0B1120]/45 text-[11px] leading-relaxed">{desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden bg-[#0B1120] py-24">
-        {/* Split background: globe left, cargo ship right */}
+      <section className="relative overflow-hidden bg-[#0B1120] py-20">
         <div className="absolute inset-0 grid grid-cols-2">
           <div className="relative">
             <Image src={`${HP}/09-cta-global-network-clear.webp`} alt="" fill className="object-cover opacity-80 brightness-110" />

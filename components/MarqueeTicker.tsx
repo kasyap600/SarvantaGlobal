@@ -4,14 +4,19 @@ const items = [
   "Black Pepper",
   "White Pepper",
   "Red Chillies",
+  "Turmeric",
+  "Cumin Seeds",
+  "Red Chilli Powder",
+  "Turmeric Powder",
+  "Coriander Powder",
+  "Moringa Powder",
+  "Ashwagandha",
+  "Amla Powder",
+  "Jaggery Powder",
   "Dehydrated Vegetable Powders",
   "Premium Quality",
   "India Origin",
-  "Machine Cleaned",
-  "Hygienically Packed",
   "Global Export",
-  "Trusted Sourcing",
-  "Custom Packaging",
 ];
 
 export default function MarqueeTicker() {

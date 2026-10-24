@@ -11,13 +11,15 @@ const quickLinks = [
 ];
 
 const productLinks = [
-  { href: "/products/red-chillies", label: "Red Chillies" },
   { href: "/products/black-pepper", label: "Black Pepper" },
-  { href: "/products/white-pepper", label: "White Pepper" },
+  { href: "/products/red-chillies", label: "Red Chillies" },
+  { href: "/products/turmeric-finger", label: "Turmeric Finger" },
+  { href: "/products/cumin-seeds", label: "Cumin Seeds" },
+  { href: "/products/turmeric-powder", label: "Turmeric Powder" },
   { href: "/products/moringa-powder", label: "Moringa Powder" },
-  { href: "/products/jaggery-powder", label: "Jaggery Powder" },
-  { href: "/products/dehydrated-vegetable-powders", label: "Dehydrated Vegetable Powders" },
-  { href: "/products", label: "All Products" },
+  { href: "/products/ashwagandha-powder", label: "Ashwagandha" },
+  { href: "/products/dehydrated-vegetable-powders", label: "Dehydrated Powders" },
+  { href: "/products", label: "View All Products →" },
 ];
 
 export default function Footer() {
