@@ -35,11 +35,16 @@ const catalogueMap: Record<string, string> = {
   "white-pepper":   "/images/Product Catalouges/White Pepper.png",
   "moringa-powder": "/images/Product Catalouges/Moringa Powder.png",
   "jaggery-powder": "/images/Product Catalouges/Jaggery Powder.png",
+  "red-chilli-powder": "/images/Product Catalouges/Red Chilli Powder.png",
   "turmeric-finger": "/images/Product Catalouges/Turmeric Finger.png",
   "turmeric-powder": "/images/Product Catalouges/Turmeric Powder.png",
   "cumin-seeds": "/images/Product Catalouges/Cumin Seeds (Jeera).png",
   "black-pepper-powder": "/images/Product Catalouges/Black Pepper Powder.png",
   "dehydrated-vegetable-powders": "/images/Product Catalouges/Dehydrated Vegetable & Fruit Powders.png",
+  "gooseberry-amla-powder": "/images/Product Catalouges/Amla Powder.png",
+  "coriander-powder": "/images/Product Catalouges/Coriander Powder.png",
+  "cumin-powder": "/images/Product Catalouges/Cumin Powder.png",
+  "ashwagandha-powder": "/images/Product Catalouges/Ashwagandha Powder.png",
 };
 
 export default function ProductsPage() {
