@@ -38,6 +38,7 @@ const catalogueMap: Record<string, string> = {
   "turmeric-finger": "/images/Product Catalouges/Turmeric Finger.png",
   "cumin-seeds": "/images/Product Catalouges/Cumin Seeds (Jeera).png",
   "black-pepper-powder": "/images/Product Catalouges/Black Pepper Powder.png",
+  "dehydrated-vegetable-powders": "/images/Product Catalouges/Dehydrated Vegetable & Fruit Powders.png",
 };
 
 export default function ProductsPage() {
