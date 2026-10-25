@@ -35,6 +35,9 @@ const catalogueMap: Record<string, string> = {
   "white-pepper":   "/images/Product Catalouges/White Pepper.png",
   "moringa-powder": "/images/Product Catalouges/Moringa Powder.png",
   "jaggery-powder": "/images/Product Catalouges/Jaggery Powder.png",
+  "turmeric-finger": "/images/Product Catalouges/Turmeric Finger.png",
+  "cumin-seeds": "/images/Product Catalouges/Cumin Seeds (Jeera).png",
+  "black-pepper-powder": "/images/Product Catalouges/Black Pepper Powder.png",
 };
 
 export default function ProductsPage() {
